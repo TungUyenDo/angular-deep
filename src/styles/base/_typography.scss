@@ -1,0 +1,113 @@
+//==============================================================================================
+// TYPOGRAPHY
+//----------------------------------------------------------------------------------------------
+// Overrides type-related settings such as default fonts, headings, and common text-related styles, such as .error.
+//----------------------------------------------------------------------------------------------
+// NOTE: Font imports should be placed in the _fonts.scss file.
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// VARIABLES
+//----------------------------------------------------------------------------------------------
+
+//Font families
+$font-stack: (
+        'georgia': (Georgia, "URW Bookman L", serif),
+        'helvetica': (Helvetica, Arial, "Nimbus Sans L", sans-serif),
+        'lucida-grande': ("Lucida Grande", "Lucida Sans Unicode", "Bitstream Vera Sans", sans-serif),
+        'monospace': ("Courier New", Courier, "Nimbus Sans L", monospace),
+        'system': (-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif),
+        'verdana': (Verdana, Geneva, "DejaVu Sans", sans-serif),
+        'open-sans': (Open Sans, sans-serif),
+        'karla': (Karla, sans-serif)
+) !default;
+
+//Font sizes
+$font-size-base: 1.4rem !default; // 14px
+$font-size-h1: 2.4rem; // 24px
+$font-size-h2: 2rem; // 20px
+$font-size-h3: 1.8rem; // 18px
+$font-size-h4: 1.6rem !default; // 14px
+$font-size-h5: 1.3rem !default; // 13px
+$font-size-h6: 1.2rem !default; // 12px
+
+//Text positioning/padding
+$line-height-base: 1.428571429 !default; // 20/14
+$line-height-calculated: floor(($font-size-base * $line-height-base)) !default;
+$heading-margin-top: 0.2rem !default;
+$heading-margin-bottom: 0.5rem !default;
+
+//Weight
+$font-weight-base: 400 !default; // 'normal'
+$font-weight-bold: 700 !default; // 'bold'
+$font-weight-semibold: 600 !default;
+$font-weight-light: 300 !default;
+
+
+//----------------------------------------------------------------------------------------------
+// Functions
+//----------------------------------------------------------------------------------------------
+
+/// Return a font stack list from a map. Equivalent to `map-get($name, $font-stack)`.
+///
+/// @param {String} $stack - Name of the font stack.
+/// @param {Map} $map [$font-stack] - Map of font stacks to retrieve a list from.
+///
+/// @returns {List} Found font stack.
+@function font-stack($stack, $map: $font-stack) {
+    @return map-get($map, $stack);
+}
+
+
+//----------------------------------------------------------------------------------------------
+// HEADINGS
+//----------------------------------------------------------------------------------------------
+
+h1, h2, h3, h4, p, a {
+    padding: 0;
+    margin: 0;
+    color: $primary_black;
+    font-family: font-stack(karla);;
+    font-weight: normal;
+
+    text-align: center;
+    word-break: break-word;
+}
+
+h1 {
+    font-size: $font-size-h1;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: $font-size-h2;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: $font-size-h3;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: $font-size-h4;
+    font-weight: normal;
+}
+
+h5 {
+    font-size: $font-size-h5;
+    font-weight: normal;
+}
+
+p {
+
+    font-size: $font-size-base;
+}
+
+
+a {
+    &:hover{
+        color: $primary_orange;
+    }
+}

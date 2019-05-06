@@ -1,0 +1,24 @@
+<h1>1. Photo Animation Example</h1>
+
+<div class="main-image" [@photoAnimation]="animate">
+    <img src="assets/images/ice_dragon.jpg" alt="">
+</div>
+
+
+<div class="animation-toolbar">
+    <az-btn variant="accent" class="animate-action" (click)="changeAnimationState('show')">
+        Show
+    </az-btn>
+    <az-btn variant="accent" class="animate-action" (click)="changeAnimationState('hide')">
+        Hide
+    </az-btn>
+    <az-btn variant="accent" class="animate-action" (click)="changeAnimationState('enlarge')">
+        Enlarge
+    </az-btn>
+    <az-btn variant="accent" class="animate-action" (click)="changeAnimationState('spin')">
+        Spin
+    </az-btn>
+    <az-btn variant="accent" class="animate-action"  (click)="changeAnimationState('move')">
+        Move
+    </az-btn>
+</div>

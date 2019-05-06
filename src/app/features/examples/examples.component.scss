@@ -1,0 +1,21 @@
+@import "../../../styles/abstracts/variables";
+
+:host::ng-deep {
+    display: flex;
+    flex-direction: column;
+    margin: 8rem 4rem;
+
+    h1 {
+        align-self: flex-start;
+        margin: 2rem 0;
+
+        color: $primary_black;
+
+        font-size: 2rem;
+        font-weight: bold;
+
+        text-transform: none;
+
+    }
+
+}

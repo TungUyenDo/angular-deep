@@ -1,0 +1,10 @@
+<div class="toolbar">
+    <az-btn class="modifier" (click)="modify('red')">State 1</az-btn>
+    <az-btn class="modifier" (click)="modify('blue')">State 2</az-btn>
+
+    <az-btn class="modifier" (click)="toggle()">Toggle</az-btn>
+
+</div>
+
+
+<div class="block" [@basicAnimation]="animateState" *ngIf="active"></div>

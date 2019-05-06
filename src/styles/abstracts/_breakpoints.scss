@@ -1,0 +1,59 @@
+
+/// A list of named breakpoints. You can use these with the `breakpoint()` mixin to quickly create media queries.
+/// @type Map
+$breakpoints: (
+        'xs' : 37.5rem,
+        'small': 76.8rem,
+        'medium' : 99.2rem,
+        'large' : 102.4rem,
+        'xlarge': 120rem,
+        'xxlarge': 144rem,
+);
+
+//$breakpoints-keys: map-to-list($breakpoints, 'keys');
+
+
+/// Generates a media query string matching the input value. Refer to the documentation for the `breakpoint()` mixin to see what the possible inputs are.
+///
+/// @param {Keyword|Number} $val [small] - Breakpoint name, or px, rem, or em value to process.
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media only screen and (min-width: $bp-wide) {
+            @content ;
+        }
+    } @else if $point == laptop {
+        @media only screen and (min-width: $bp-medium) and(max-width: $bp-large) {
+            @content ;
+        }
+    } @else if $point == tablet {
+        @media only screen and (min-width: $bp-xs) and(max-width: $bp-medium) {
+            @content ;
+        }
+    }
+        //@else if $point == phablet {
+        //    @media only screen and (min-width: $bp-xs) and(max-width: $bp-small)  { @content ; }
+        //}
+    @else if $point == mobile {
+        @media only screen and (max-width: $bp-xs) {
+            @content ;
+        }
+
+    }
+}
+
+@mixin media($min, $max) {
+    @if ($min  != null and $max != null) {
+        @media only screen and (min-width: $min) and (max-width: $max) {
+            @content ;
+        }
+    } @else if ($max  != null) {
+        @media only screen and (max-width: $max) {
+            @content ;
+        }
+    } @else if ($min != null) {
+        @media only screen and (min-width: $min) {
+            @content ;
+        }
+    }
+}
+

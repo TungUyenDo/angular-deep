@@ -1,0 +1,27 @@
+<h1>2. List Animation Example</h1>
+
+<div class="container">
+
+    <div class="photo-list" [@photoListAnimation]="photoList.length">
+        <div class="photo-image" *ngFor="let photo of photoList">
+            <img src="{{photo}}" alt="">
+        </div>
+    </div>
+
+    <div class="animation-toolbar">
+        <az-btn variant="warning" class="animate-action" (click)="initPhotoList()">
+        Init
+    </az-btn>
+        <az-btn variant="warning" class="animate-action" (click)="destroyPhotoList()">
+            Destroy
+        </az-btn>
+        <az-btn variant="warning" class="animate-action" (click)="addPhoto()">
+            Add
+        </az-btn>
+        <az-btn variant="warning" class="animate-action" (click)="deletePhoto()">
+            Delete
+        </az-btn>
+    </div>
+</div>
+
+

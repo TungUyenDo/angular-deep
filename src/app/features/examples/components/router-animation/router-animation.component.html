@@ -1,0 +1,29 @@
+<h1>3. Router Animation Example</h1>
+
+
+<div class="navigation-toolbar">
+    <az-btn variant="danger" class="nav-link" routerLink="page-1" routerLinkActive="active">
+        Page 1
+    </az-btn>
+    <az-btn variant="danger" class="nav-link" routerLink="page-2" routerLinkActive="active">
+        Page 2
+    </az-btn>
+    <az-btn variant="danger" class="nav-link" routerLink="page-3" routerLinkActive="active">
+        Page 3
+    </az-btn>
+    <az-btn variant="danger" class="nav-link" routerLink="page-4" routerLinkActive="active">
+        Page 4
+    </az-btn>
+</div>
+
+
+<div class="container"
+     [@routerAnimation]="transitionState"
+     (@routerAnimation.start)="animationStart($event)"
+     (@routerAnimation.done)="animationDone($event)"
+>
+    <router-outlet></router-outlet>
+</div>
+
+
+

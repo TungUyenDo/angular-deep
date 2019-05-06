@@ -1,0 +1,25 @@
+:host {
+    .toolbar {
+        margin: 2rem 0;
+        .modifier {
+
+            height: 4rem;
+
+            margin: 0 2rem;
+            padding: 0 3rem;
+            color: white;
+            background-color: blue;
+            font-size: 2rem;
+            &:first-child {
+                background-color: red;
+            }
+        }
+    }
+    .block {
+        display: flex;
+        width: 20rem;
+        height: 20rem;
+
+        background-color: red;
+    }
+}
